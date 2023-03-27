@@ -1,9 +1,9 @@
 {
-    "Identifier": "",
-    "Slug": "",
-    "Status": "",
-    "Title": "",
-    "Description": "",
+    "Identifier": "eos8fth",
+    "Slug": "redial-2020",
+    "Status": "In progress",
+    "Title": "REDIAL-2020",
+    "Description": "Predicts Anti-SARS-CoV-2 Activities (Live Virus Infectivity, Viral Entry, Viral Replication, In vitro Infectivity, Human Cell Toxicity) and also perform Similarity Search",
     "Mode": "",
     "Task": [],
     "Input": [],
@@ -12,8 +12,10 @@
     "Output Type": [],
     "Output Shape": "",
     "Interpretation": "",
-    "Tag": [],
-    "Publication": "",
-    "Source Code": "",
-    "License": ""
+    "Tag": [
+        "SARS-CoV-2"
+    ],
+    "Publication": "https://www.nature.com/articles/s42256-021-00335-w#Sec9",
+    "Source Code": "https://github.com/sirimullalab/redial-2020/tree/v1.0",
+    "License": "MIT License"
 }
