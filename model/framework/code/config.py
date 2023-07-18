@@ -35,7 +35,7 @@ def get_tpatf(m):
 
     try:
         # Path to perl script
-        script_path = '../../redial-2020/mayachemtools/bin/TopologicalPharmacophoreAtomTripletsFingerprints.pl'
+        script_path = '../../checkpoints/TopologicalPharmacophoreAtomTripletsFingerprints.pl'
         command = "perl " + script_path + " -r " + os.path.join(temp_dir,"temp") + " --AtomTripletsSetSizeToUse FixedSize -v ValuesString -o " + os.path.join(temp_dir, "temp.sdf")
         os.system(command)
 

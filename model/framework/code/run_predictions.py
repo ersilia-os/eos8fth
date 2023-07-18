@@ -11,6 +11,7 @@ import argparse, pickle, json
 from get_features import FeaturesGeneration
 from smile_standardization import StandardSmiles
 
+
 # SMILES standardization
 def standardize(temp_dir, csv_file):
     df = pd.read_csv(csv_file)
@@ -65,7 +66,7 @@ def make_dictn():
 def get_consensus(df):
     consensus_label = []
     for i in range(len(df)):
-        if (df['fingerprint'][i]+df['pharmacophore'][i]+df['rdkDescriptor'][i])>=2.0:
+        if (df['fingerprint'][i] + df['pharmacophore'][i] + df['rdkDescriptor'][i]) >= 2.0:
             consensus_label.append(1.0)
         else:
             consensus_label.append(0.0)
@@ -101,6 +102,24 @@ def get_predictions(temp_dir, results, csv_file):
         
         df_consensus = get_consensus(df)
         df_consensus.to_csv(results+'/'+m+'-'+filename+'-consensus.csv', index=False)
+
+def combine_consensus_results(output_files, combined_output_file):
+    # Initialize an empty list to store the consensus columns
+    consensus_columns = []
+    
+    # Read each output file and extract the consensus column
+    for file in output_files:
+        df = pd.read_csv(file)
+        consensus_columns.append(df['Consensus'])
+    
+    # Create a new DataFrame containing the consensus columns
+    combined_df = pd.concat(consensus_columns, axis=1)
+    
+    # Rename the columns with the original file names
+    combined_df.columns = [file.split('-')[0] for file in output_files]
+    
+    # Write the combined DataFrame to a new CSV file
+    combined_df.to_csv(combined_output_file, index=False)
 
 if __name__ == '__main__':
 
