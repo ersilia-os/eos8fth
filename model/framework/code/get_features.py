@@ -62,7 +62,7 @@ class FeaturesGeneration:
             fp_array = ( np.asarray((X), dtype=object) )
             X = X.astype(np.float32)
             X = np.nan_to_num(X)
-            rdkDes_scaler = pickle.load(open('../scalers/'+model+'-rdkDes_scaler.pkl', 'rb'))
+            rdkDes_scaler = pickle.load(open('../../checkpoints/scalers/'+model+'-rdkDes_scaler.pkl', 'rb'))
             X = rdkDes_scaler.transform(X)
 
         else:
