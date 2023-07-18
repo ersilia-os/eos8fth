@@ -48,7 +48,7 @@ def automate(temp_dir, _file):
 
 # Get fingerprint type of best fingerprint models
 def make_dictn():
-    files = glob.glob('../redial-2020-notebook-work/models_tuned_best/*.pkl')
+    files = glob.glob('../../checkpoints/models_tuned_best/*.pkl')
     fingerprints, models = [], []
     for f in files:
         filename = os.path.splitext(os.path.basename(f))[0]
@@ -90,7 +90,7 @@ def get_predictions(temp_dir, results, csv_file):
         for fp, fp_name in zip(fpnames, exact_fpnames):
             data = features_dictn[m][fp]
             X_true= data
-            model = pickle.load(open('../redial-2020-notebook-work/models_tuned_best/'+fp_name+'-'+m+\
+            model = pickle.load(open('../../checkpoints/models_tuned_best/'+fp_name+'-'+m+\
                     '-balanced_randomsplit7_70_15_15.pkl', 'rb'))
             y_pred = model.predict(X_true)
             predictions.append(y_pred)
