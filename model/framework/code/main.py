@@ -3,10 +3,10 @@ import os
 import csv
 import sys
 import pandas as pd 
+import shutil
 import tempfile
 from run_predictions import get_predictions, make_dictn, get_consensus
 from rdkit import Chem
-from rdkit.Chem.Descriptors import MolWt
 
 # parse arguments
 input_file = sys.argv[1]
