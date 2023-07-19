@@ -42,11 +42,11 @@ def my_model(csv_file):
     try:
         #run model
         temp_dir = tempfile.mkdtemp()
-        get_predictions(temp_results_folder, csv_file)
+        get_predictions(temp_dir, temp_results_folder, csv_file)
 
         #adapt output
         combined_file = 'consensus_files.csv'
-        combine_consensus_files(temp_dir, temp_results_folder, combined_file)
+        combine_consensus_files(temp_results_folder, combined_file)
         return combined_file
 
     finally:
