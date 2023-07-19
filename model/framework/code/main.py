@@ -15,7 +15,7 @@ output_file = sys.argv[2]
 # current file directory
 root = os.path.dirname(os.path.abspath(__file__))
 
-def combine_consensus_files(outputs, combined_file):
+def combine_consensus_files(output_folder, combined_file):
     files = os.listdir(output_folder)
     consensus_files = [f for f in files if f.endswith('-consensus.csv')]
 
@@ -37,7 +37,7 @@ def combine_consensus_files(outputs, combined_file):
 
 
 # my model
-def my_model(smiles_list):
+def my_model(csv_file):
     temp_results_folder = tempfile.mkdtemp()
     try:
         #run model
