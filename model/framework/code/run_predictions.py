@@ -32,7 +32,7 @@ def automate(temp_dir, _file):
     stand_df = standardize(temp_dir, _file)
     
     features_dictn = dict()
-    file_path = 'model/framework/code/dictn_models_fp.json'
+    file_path = 'simra/OneDrive/Desktop/Repos/eos8fth/model/framework/code/dictn_models_fp.json'
     dictn = json.load(open(file_path, 'r'))
     fg = FeaturesGeneration()
     pharmacophore = fg.get_fingerprints(stand_df, 'dummy_name', 'tpatf', 'dummy_split', 'dummpy_numpy_folder')
