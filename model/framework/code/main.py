@@ -60,9 +60,15 @@ with open(input_file, "r") as f:
     next(reader)  # skip header
     smiles_list = [r[0] for r in reader]
 
+data_with_header = [['SMILES']] + [[smiles] for smiles in smiles_list]
+
+with open("tmp_input.smi", "w", newline='') as f:
+        writer = csv.writer(f)
+        writer.writerows(data_with_header)
+
 # run model
 
-output_consensus = my_model(input_file)
+output_consensus = my_model("tmp_input.smi")
 
 # write output in a .csv file
 with open(output_file, "w") as f:
@@ -75,3 +81,5 @@ with open(output_file, "w") as f:
 
     for o in outputs:
         writer.writerow([o])
+        
+os.remove("tmp_input.smi")
