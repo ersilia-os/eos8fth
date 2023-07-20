@@ -32,7 +32,7 @@ def automate(temp_dir, _file):
     stand_df = standardize(temp_dir, _file)
     
     features_dictn = dict()
-    dictn = json.load(open('dictn_models_fp.json', 'r'))
+    dictn = json.load(open("model\framework\code\dictn_models_fp.json", 'r'))
     fg = FeaturesGeneration()
     pharmacophore = fg.get_fingerprints(stand_df, 'dummy_name', 'tpatf', 'dummy_split', 'dummpy_numpy_folder')
     
