@@ -33,7 +33,7 @@ def automate(temp_dir, _file):
     
     features_dictn = dict()
 
-    file_path = os.path.abspath('dictn_models_fp.json')
+    file_path = os.path.abspath("dictn_models_fp.json")
     dictn = json.load(open(file_path, 'r'))
     fg = FeaturesGeneration()
     pharmacophore = fg.get_fingerprints(stand_df, 'dummy_name', 'tpatf', 'dummy_split', 'dummpy_numpy_folder')
