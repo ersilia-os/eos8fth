@@ -51,7 +51,7 @@ def automate(temp_dir, _file):
 
 # Get fingerprint type of best fingerprint models
 def make_dictn():
-    files = glob.glob('../../checkpoints/models_tuned_best/*.pkl')
+    files = glob.glob(os.path.abspath('eos8fth/model/checkpoints/models_tuned_best/*.pkl'))
     fingerprints, models = [], []
     for f in files:
         filename = os.path.splitext(os.path.basename(f))[0]
