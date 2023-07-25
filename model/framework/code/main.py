@@ -76,7 +76,7 @@ with open(output_file, "w") as f:
     writer.writerow(["value"])  # header
 
     #adapt output again
-    consensus_df = pd.read_csv(consensus_file)
+    consensus_df = pd.read_csv(output_consensus)
     outputs = consensus_df['Consensus'].tolist()
 
     for o in outputs:
