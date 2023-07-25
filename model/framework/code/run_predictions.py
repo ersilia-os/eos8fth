@@ -93,8 +93,8 @@ def get_predictions(temp_dir, results, csv_file):
         for fp, fp_name in zip(fpnames, exact_fpnames):
             data = features_dictn[m][fp]
             X_true= data
-            model = pickle.load(open('../../checkpoints/models_tuned_best/'+fp_name+'-'+m+\
-                    '-balanced_randomsplit7_70_15_15.pkl', 'rb'))
+            models_tuned_dir = os.path.abspath('eos8fth/model/checkpoints/models_tuned_best')
+            model = pickle.load(open(os.path.join(models_tuned_dir, fp_name + '-' + m + '-balanced_randomsplit7_70_15_15.pkl'), 'rb'))
             y_pred = model.predict(X_true)
             predictions.append(y_pred)
         
