@@ -64,7 +64,7 @@ class FeaturesGeneration:
             X = np.nan_to_num(X)
             scalers_dir = os.path.abspath("eos8fth/model/checkpoints/scalers")
             rdkDes_scaler_path = os.path.join(scalers_dir, model + '-rdkDes_scaler.pkl')
-            rdkDes_scaler = pickle.load(open('rdkDes_scaler_path', 'rb'))
+            rdkDes_scaler = pickle.load(open(rdkDes_scaler_path, 'rb'))
             X = rdkDes_scaler.transform(X)
 
         else:
