@@ -1,7 +1,7 @@
 FROM bentoml/model-server:0.11.0-py37
 MAINTAINER ersilia
 
-RUN pip install rdkit==2020.03.1
+RUN pip install rdkit==2023.3.1
 RUN pip install numpy==1.19.2
 RUN pip install hypopt==1.0.9
 RUN pip install argparse==1.4.0
