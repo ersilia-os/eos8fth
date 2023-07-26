@@ -14,8 +14,7 @@ RUN pip install func_timeout==4.3.5
 RUN pip install xgboost==1.0.2
 RUN pip install scikit-learn==0.22.1
 RUN pip install pandas==1.1.2
-RUN pip install requests==2.31.0 
-RUN pip install urllib3==1.26.16
+
 
 WORKDIR /repo
 COPY . /repo
