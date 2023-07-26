@@ -75,7 +75,7 @@ with open("tmp_input.smi", "w", newline='') as f:
 output_consensus = my_model("tmp_input.smi")
 
 # write output in a .csv file
-copy_combined_to_output(output_consensus, output_file):
+copy_combined_to_output(output_consensus, output_file)
         
 os.remove("tmp_input.smi")
 os.remove('consensus_files.csv')
