@@ -124,4 +124,4 @@ if __name__ == '__main__':
     temp_dir = tempfile.mkdtemp() 
     get_predictions(temp_dir, results, csv_file)
     shutil.rmtree(temp_dir)
-    print('Done')
+    #print('Done')

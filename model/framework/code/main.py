@@ -35,6 +35,10 @@ def combine_consensus_files(output_folder, combined_file):
 
     combined_df.to_csv(combined_file, index=False)
 
+def copy_combined_to_output(combined_file, output_file):
+    with open(combined_file, 'r') as src, open(output_file, 'w') as dest:
+        dest.write(src.read())
+
 
 # my model
 def my_model(csv_file):
@@ -71,15 +75,7 @@ with open("tmp_input.smi", "w", newline='') as f:
 output_consensus = my_model("tmp_input.smi")
 
 # write output in a .csv file
-with open(output_file, "w") as f:
-    writer = csv.writer(f)
-    writer.writerow(["value"])  # header
-
-    #adapt output again
-    consensus_df = pd.read_csv(output_consensus)
-    outputs = consensus_df['Consensus'].tolist()
-
-    for o in outputs:
-        writer.writerow([o])
+copy_combined_to_output(output_consensus, output_file):
         
 os.remove("tmp_input.smi")
+os.remove('consensus_files.csv')
