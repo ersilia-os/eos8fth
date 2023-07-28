@@ -6,7 +6,9 @@
     "Description": "Predicts Anti-SARS-CoV-2 Activities (Live Virus Infectivity, Viral Entry, Viral Replication, In vitro Infectivity, Human Cell Toxicity) and also perform Similarity Search",
     "Mode": "Pretrained",
     "Task": ["Prediction"],
-    "Input": ["SMILES"],
+    "Input": [
+        "Compound"
+    ],
     "Input Shape": "Single",
     "Output": ["Consensus"],
     "Output Type": ["Binary"],
