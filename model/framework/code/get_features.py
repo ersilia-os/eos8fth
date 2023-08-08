@@ -27,7 +27,7 @@ class FeaturesGeneration:
         selected_indices = [descriptor_names.index(name) for name in selected_descriptor_names]
         descriptors = [Descriptors.descList[i][1](mol) for i in selected_indices]
         return descriptors
-        
+
     def get_fingerprints(self, df, model, fp_name, split, numpy_folder):
 
         smiles_list = df['SMILES_stand'].to_list()
@@ -40,7 +40,10 @@ class FeaturesGeneration:
                 m = Chem.MolFromSmiles(smi)
             
                 can_smi = Chem.MolToSmiles(m, True)
-                fp = fpFunc_dict[fp_name](m)
+                if fp_name == 'rdkDes':
+                    fp = self.select_descriptors(m, selected_descriptors_rdkDes)
+                else:
+                    fp = fpFunc_dict[fp_name](m)
                 bit_array = np.asarray(fp)
                 self.fingerprints.append(bit_array)
             except:
@@ -49,7 +52,7 @@ class FeaturesGeneration:
                 if fp_name == 'tpatf':
                     add = [np.nan for i in range(self.fingerprints[0].shape[1])]
                 elif fp_name == 'rdkDes':
-                    add = [np.nan for i in range(len(self.fingerprints[0]))]
+                    add = [np.nan for i in range(len(selected_descriptors_rdkDes))]
                 else:
                     add = [np.nan for i in range(len(self.fingerprints[0]))]
                 tpatf_arr = np.array(add, dtype=np.float32)
@@ -58,7 +61,6 @@ class FeaturesGeneration:
                 pass
         
         if fp_name == 'rdkDes':
-            fp = self.select_descriptors(m, selected_descriptors_rdkDes)
 
             X = np.array(self.fingerprints)
             ndf = pd.DataFrame.from_records(X)
