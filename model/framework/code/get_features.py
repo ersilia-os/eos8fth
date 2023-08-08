@@ -22,10 +22,12 @@ class FeaturesGeneration:
     def __init__(self):
         self.fingerprints = []
 
-    def select_descriptors(self, mol, selected_descriptors):
-        descriptors = [Descriptors.descList[i][1](mol) for i in selected_descriptors]
+    def select_descriptors(self, mol, selected_descriptor_names):
+        descriptor_names = [desc[0] for desc in Descriptors.descList]
+        selected_indices = [descriptor_names.index(name) for name in selected_descriptor_names]
+        descriptors = [Descriptors.descList[i][1](mol) for i in selected_indices]
         return descriptors
-
+        
     def get_fingerprints(self, df, model, fp_name, split, numpy_folder):
 
         smiles_list = df['SMILES_stand'].to_list()
