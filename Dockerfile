@@ -14,7 +14,7 @@ RUN pip install requests
 RUN pip install pubchempy==1.0.4
 RUN pip install func_timeout==4.3.5
 RUN pip install xgboost==1.0.2
-RUN pip install scikit-learn
+RUN pip install scikit-learn==0.22.1
 RUN pip install pandas==1.1.2
 
 
