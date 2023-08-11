@@ -95,7 +95,7 @@ def get_predictions(temp_dir, results, csv_file):
             X_true= data
             models_tuned_dir = os.path.abspath('eos8fth/model/checkpoints/models_tuned_best')
             #model = pickle.load(open(os.path.join(models_tuned_dir, fp_name + '-' + m + '-balanced_randomsplit7_70_15_15.pkl'), 'rb'))
-            model = pickle.load(open(os.path.abspath('eos8fth/model/checkpoints/models_tuned_best/tpatf-CoV1-PPE_cs-balanced_randomsplit7_70_15_15.pkl'), 'rb'))
+            model = pickle.load(open(os.path.abspath('eos8fth/model/checkpoints/models_tuned_best/rdkDes-MERS-PPE_cs-balanced_randomsplit7_70_15_15.pkl'), 'rb'))
             y_pred = model.predict(X_true)
             predictions.append(y_pred)
         
