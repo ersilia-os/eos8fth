@@ -41,7 +41,9 @@ class FeaturesGeneration:
             
                 can_smi = Chem.MolToSmiles(m, True)
                 if fp_name == 'rdkDes':
+                    print("Selected SMILES:", can_smi)
                     fp = self.select_descriptors(m, selected_descriptors_rdkDes)
+                    print("Descriptors:", fp) 
                 else:
                     fp = fpFunc_dict[fp_name](m)
                 bit_array = np.asarray(fp)
@@ -79,6 +81,7 @@ class FeaturesGeneration:
             rdkDes_scaler_path = os.path.join(scalers_dir, model + '-rdkDes_scaler.pkl')
             rdkDes_scaler = pickle.load(open(rdkDes_scaler_path, 'rb'))
             X = rdkDes_scaler.transform(X)
+            print("Processed Descriptors (after scaling):", X)
 
         else:
             fp_array = ( np.asarray((self.fingerprints), dtype=object) )
