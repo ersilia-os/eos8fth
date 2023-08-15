@@ -31,7 +31,7 @@ class FeaturesGeneration:
             try: 
                 m = Chem.MolFromSmiles(smi)
             
-                 can_smi = Chem.MolToSmiles(m, True)
+                can_smi = Chem.MolToSmiles(m, True)
         
                 # Calculate only the specific 200 descriptors
                 descriptor_values = []
