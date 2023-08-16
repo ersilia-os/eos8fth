@@ -3,8 +3,8 @@ MAINTAINER ersilia
 
 #RUN python -m pip install --upgrade pip==20.2.3
 
-#RUN pip install rdkit-pypi==2021.3.5.1
-RUN conda install -c conda-forge rdkit::rdkit==2020.03.1
+RUN pip install rdkit-pypi==2021.3.5.1
+#RUN conda install -c conda-forge rdkit::rdkit==2020.03.1
 RUN pip install numpy==1.19.2
 RUN pip install hypopt==1.0.9
 RUN pip install argparse==1.4.0
