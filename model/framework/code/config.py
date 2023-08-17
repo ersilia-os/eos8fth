@@ -47,8 +47,11 @@ def get_tpatf(m):
         # Path to perl script
         
         script_path = os.path.abspath("eos8fth/model/checkpoints/mayachemtools/bin/TopologicalPharmacophoreAtomTripletsFingerprints.pl")
+        print("script_path")
         command = "perl " + script_path + " -r " + os.path.join(temp_dir,"temp") + " --AtomTripletsSetSizeToUse FixedSize -v ValuesString -o " + os.path.join(temp_dir, "temp.sdf")
+        print("command")
         os.system(command)
+        print("os")
         #subprocess.run(command, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
         with open(os.path.join(temp_dir, "temp.csv"), 'r') as f:
