@@ -24,6 +24,7 @@ desc_to_func_mapping = {desc[0]: desc[1] for desc in Descriptors._descList}
 
 # Create a new desc_list containing only the specific descriptors
 valid_descriptor_names = [desc_name for desc_name in descriptor_names if desc_name in desc_to_func_mapping]
+print("valid_descriptor_names", valid_descriptor_names)
 
 # Create the MoleculeDescriptorCalculator object with the valid descriptor names
 calc = MoleculeDescriptors.MolecularDescriptorCalculator(valid_descriptor_names)
