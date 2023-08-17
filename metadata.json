@@ -3,7 +3,7 @@
     "Slug": "redial-2020",
     "Status": "In progress",
     "Title": "REDIAL-2020",
-    "Description": "Predicts Anti-SARS-CoV-2 Activities (Live Virus Infectivity, Viral Entry, Viral Replication, In vitro Infectivity, Human Cell Toxicity) and also perform Similarity Search",
+    "Description": "Predicts Anti-Sars-Cov-2 Activities(Live Virus Infectivity, Viral Entry, Viral Replication, In Vitro Infectivity, Human Cell Toxicitiy). Consensus results are obtained using the prediction of three different models for each activity and toxicity models. The output is predicted based on the voting by three models. The output is predicted based on the voting by these three models. Further details on result interpretations can be found here: https://drugcentral.org/Redial",
     "Mode": "Pretrained",
     "Task": ["Prediction"],
     "Input": [
