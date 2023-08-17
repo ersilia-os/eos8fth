@@ -10,7 +10,7 @@
         "Compound"
     ],
     "Input Shape": "Single",
-    "Output": ["Consensus"],
+    "Output": ["Boolean"],
     "Output Type": ["Binary"],
     "Output Shape": "Single",
     "Interpretation": "Columns represent different models, values in each column are represented as binary values where 1 indicates a positive prediction for SARS-CoV-2 activity and 0 indicates a negative prediction.",
