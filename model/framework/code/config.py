@@ -22,14 +22,12 @@ descriptor_names =  ['MaxEStateIndex', 'MinEStateIndex', 'MaxAbsEStateIndex', 'M
 
 desc_to_func_mapping = {desc[0]: desc[1] for desc in Descriptors._descList}
 
-# Create a new desc_list containing only the specific descriptors
-valid_descriptor_names = [desc_name for desc_name in descriptor_names if desc_name in desc_to_func_mapping]
-print("valid_descriptor_names", valid_descriptor_names)
 
-# Create the MoleculeDescriptorCalculator object with the valid descriptor names
+valid_descriptor_names = [desc_name for desc_name in descriptor_names if desc_name in desc_to_func_mapping]
+
 calc = MoleculeDescriptors.MolecularDescriptorCalculator([x[0] for x in valid_descriptor_names])
 
-#calc = MoleculeDescriptors.MolecularDescriptorCalculator([x[0] for x in Descriptors._descList])
+
 
 # Function for generating TPATF features, using Mayachem tools
 def get_tpatf(m):
