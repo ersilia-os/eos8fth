@@ -32,8 +32,8 @@ def automate(temp_dir, _file):
     stand_df = standardize(temp_dir, _file)
     
     features_dictn = dict()
-
-    file_path = os.path.abspath("eos8fth/model/framework/code/dictn_models_fp.json")
+    dir_path = os.path.dirname(os.path.abspath(__file__))
+    file_path = file_path = os.path.join(dir_path, "dictn_models_fp.json")
     dictn = json.load(open(file_path, 'r'))
     fg = FeaturesGeneration()
     pharmacophore = fg.get_fingerprints(stand_df, 'dummy_name', 'tpatf', 'dummy_split', 'dummpy_numpy_folder')
