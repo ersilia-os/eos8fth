@@ -51,11 +51,7 @@ def automate(temp_dir, _file):
 
 # Get fingerprint type of best fingerprint models
 def make_dictn():
-
-    cur_dir = os.path.dirname(os.path.abspath(__file__))
-    project_dir = os.path.dirname(cur_dir)
-    file_path = os.path.join(project_dir, "model/checkpoints/models_tuned_best/*.pkl")
-    files = glob.glob(file_path)
+    files = glob.glob(os.path.abspath('eos8fth/model/checkpoints/models_tuned_best/*.pkl'))
     fingerprints, models = [], []
     for f in files:
         filename = os.path.splitext(os.path.basename(f))[0]
@@ -97,11 +93,9 @@ def get_predictions(temp_dir, results, csv_file):
         for fp, fp_name in zip(fpnames, exact_fpnames):
             data = features_dictn[m][fp]
             X_true= data
-            cur_dir = os.path.dirname(os.path.abspath(__file__))
-            project_dir = os.path.dirname(cur_dir)
-            models_tuned_path = os.path.join(project_dir, "model/checkpoints/models_tuned_best/")
+            models_tuned_dir = os.path.abspath('eos8fth/model/checkpoints/models_tuned_best')
             pickle_filename = '{}-{}-balanced_randomsplit7_70_15_15.pkl'.format(fp_name, m)
-            pickle_path = os.path.join(models_tuned_path, pickle_filename)
+            pickle_path = os.path.join(models_tuned_dir, pickle_filename)
             
             model = pickle.load(open(pickle_path, 'rb'))
             y_pred = model.predict(X_true)

@@ -57,6 +57,7 @@ def get_tpatf(m):
                     line = line.split(';')[5].replace('"', '')
                     features = [int(i) for i in line.split(" ")]
     except:
+        print("hello")
         features = None
 
     # Delete the temporary directory
