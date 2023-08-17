@@ -57,8 +57,10 @@ def get_tpatf(m):
         with open(os.path.join(temp_dir, "temp.csv"), 'r') as f:
             for line in f.readlines():
                 if "Cmpd" in line:
+                    print("cmpd")
                     line = line.split(';')[5].replace('"', '')
                     features = [int(i) for i in line.split(" ")]
+                    print("features")
     except:
         print("hello")
         features = None
