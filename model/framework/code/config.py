@@ -23,11 +23,10 @@ descriptor_names =  ['MaxEStateIndex', 'MinEStateIndex', 'MaxAbsEStateIndex', 'M
 desc_to_func_mapping = {desc[0]: desc[1] for desc in Descriptors._descList}
 
 # Create a new desc_list containing only the specific descriptors
-desc_list = [desc_to_func_mapping[desc_name] for desc_name in descriptor_names if desc_name in desc_to_func_mapping]
+valid_descriptor_names = [desc_name for desc_name in descriptor_names if desc_name in desc_to_func_mapping]
 
-# Create the MoleculeDescriptorCalculator object with the specific descriptors
-calc = MoleculeDescriptors.MolecularDescriptorCalculator(desc_list)
-
+# Create the MoleculeDescriptorCalculator object with the valid descriptor names
+calc = MoleculeDescriptors.MolecularDescriptorCalculator(valid_descriptor_names)
 
 #calc = MoleculeDescriptors.MolecularDescriptorCalculator([x[0] for x in Descriptors._descList])
 
