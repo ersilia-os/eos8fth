@@ -11,6 +11,10 @@ import argparse, pickle, json
 from get_features import FeaturesGeneration
 from smile_standardization import StandardSmiles
 
+#paths
+code_path = os.path.dirname(os.path.abspath(__file__))
+framework_path = os.path.dirname(code_path)
+model_path = os.path.dirname(framework_path)
 
 # SMILES standardization
 def standardize(temp_dir, csv_file):
@@ -32,8 +36,7 @@ def automate(temp_dir, _file):
     stand_df = standardize(temp_dir, _file)
     
     features_dictn = dict()
-    dir_path = os.path.dirname(os.path.abspath(__file__))
-    file_path = file_path = os.path.join(dir_path, "dictn_models_fp.json")
+    file_path = file_path = os.path.join(code_path, "dictn_models_fp.json")
     dictn = json.load(open(file_path, 'r'))
     fg = FeaturesGeneration()
     pharmacophore = fg.get_fingerprints(stand_df, 'dummy_name', 'tpatf', 'dummy_split', 'dummpy_numpy_folder')
@@ -51,7 +54,8 @@ def automate(temp_dir, _file):
 
 # Get fingerprint type of best fingerprint models
 def make_dictn():
-    files = glob.glob(os.path.abspath('eos8fth/model/checkpoints/models_tuned_best/*.pkl'))
+    file_path = os.path.join(model_path, "checkpoints/models_tuned_best/*.pkl")
+    files = glob.glob(file_path)
     fingerprints, models = [], []
     for f in files:
         filename = os.path.splitext(os.path.basename(f))[0]
@@ -93,7 +97,8 @@ def get_predictions(temp_dir, results, csv_file):
         for fp, fp_name in zip(fpnames, exact_fpnames):
             data = features_dictn[m][fp]
             X_true= data
-            models_tuned_dir = os.path.abspath('eos8fth/model/checkpoints/models_tuned_best')
+            models_tuned_dir = os.path.join(model_path, "checkpoints/models_tuned_best/")
+            #models_tuned_dir = os.path.abspath('eos8fth/model/checkpoints/models_tuned_best')
             pickle_filename = '{}-{}-balanced_randomsplit7_70_15_15.pkl'.format(fp_name, m)
             pickle_path = os.path.join(models_tuned_dir, pickle_filename)
             

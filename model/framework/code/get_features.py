@@ -18,6 +18,11 @@ from config import fpFunc_dict
 import argparse
 from sklearn.impute import SimpleImputer
 
+#paths
+code_path = os.path.dirname(os.path.abspath(__file__))
+framework_path = os.path.dirname(code_path)
+model_path = os.path.dirname(framework_path)
+
 class FeaturesGeneration:
     def __init__(self):
         self.fingerprints = []
@@ -62,7 +67,8 @@ class FeaturesGeneration:
             fp_array = ( np.asarray((X), dtype=object) )
             X = X.astype(np.float32)
             X = np.nan_to_num(X)
-            scalers_dir = os.path.abspath('eos8fth/model/checkpoints/scalers')
+            scalers_dir = os.path.join(model_path, "checkpoints/scalers/")
+            #scalers_dir = os.path.abspath('eos8fth/model/checkpoints/scalers')
             pickle_filename = '{}-rdkDes_scaler.pkl'.format(model)
             pickle_path = os.path.join(scalers_dir, pickle_filename)
             rdkDes_scaler = pickle.load(open(pickle_path, 'rb'))
