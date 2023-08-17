@@ -45,12 +45,11 @@ def get_tpatf(m):
 
     try:
         # Path to perl script
-        cur_dir = os.path.dirname(os.path.abspath(__file__))
-        project_dir = os.path.dirname(cur_dir)
-        script_path = os.path.join(project_dir, "model/checkpoints/mayachemtools/bin/TopologicalPharmacophoreAtomTripletsFingerprints.pl")
+        
+        script_path = os.path.abspath("eos8fth/model/checkpoints/mayachemtools/bin/TopologicalPharmacophoreAtomTripletsFingerprints.pl")
         command = "perl " + script_path + " -r " + os.path.join(temp_dir,"temp") + " --AtomTripletsSetSizeToUse FixedSize -v ValuesString -o " + os.path.join(temp_dir, "temp.sdf")
-        os.system(command)
-        #subprocess.run(command, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        #os.system(command)
+        subprocess.run(command, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
         with open(os.path.join(temp_dir, "temp.csv"), 'r') as f:
             for line in f.readlines():
