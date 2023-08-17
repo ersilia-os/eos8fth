@@ -27,7 +27,7 @@ valid_descriptor_names = [desc_name for desc_name in descriptor_names if desc_na
 print("valid_descriptor_names", valid_descriptor_names)
 
 # Create the MoleculeDescriptorCalculator object with the valid descriptor names
-calc = MoleculeDescriptors.MolecularDescriptorCalculator(valid_descriptor_names)
+calc = MoleculeDescriptors.MolecularDescriptorCalculator([x[0] for x in valid_descriptor_names])
 
 #calc = MoleculeDescriptors.MolecularDescriptorCalculator([x[0] for x in Descriptors._descList])
 
