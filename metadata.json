@@ -15,7 +15,7 @@
     "Output Shape": "Single",
     "Interpretation": "Columns represent different models, values in each column are represented as binary values where 1 indicates a positive prediction for SARS-CoV-2 activity and 0 indicates a negative prediction.",
     "Tag": [
-        "SARS-CoV-2"
+        "Sars-CoV-2"
     ],
     "Publication": "https://www.nature.com/articles/s42256-021-00335-w#Sec9",
     "Source Code": "https://github.com/sirimullalab/redial-2020/tree/v1.0",
