@@ -3,19 +3,33 @@
     "Slug": "redial-2020",
     "Status": "In progress",
     "Title": "REDIAL-2020",
-    "Description": "Predicts Anti-SARS-CoV-2 Activities (Live Virus Infectivity, Viral Entry, Viral Replication, In vitro Infectivity, Human Cell Toxicity) and also perform Similarity Search",
-    "Mode": "",
-    "Task": [],
-    "Input": [],
-    "Input Shape": "",
-    "Output": [],
-    "Output Type": [],
-    "Output Shape": "",
-    "Interpretation": "",
+    "Description": "Predicts Anti-Sars-Cov-2 Activities(Live Virus Infectivity, Viral Entry, Viral Replication, In Vitro Infectivity, Human Cell Toxicitiy). Consensus results are obtained using the prediction of three different models for each activity and toxicity models. The output is predicted based on the voting by three models. The output is predicted based on the voting by these three models. Further details on result interpretations can be found here: https://drugcentral.org/Redial",
+    "Mode": "Pretrained",
+    "Task": [
+        "Classification"
+    ],
+    "Input": [
+        "Compound"
+    ],
+    "Input Shape": "Single",
+    "Output": [
+        "Boolean"
+    ],
+    "Output Type": [
+        "Float"
+    ],
+    "Output Shape": "Single",
+    "Interpretation": "Columns represent different models, values in each column are represented as binary values where 1 indicates a positive prediction for SARS-CoV-2 activity and 0 indicates a negative prediction.",
     "Tag": [
-        "SARS-CoV-2"
+        "Sars-CoV-2",
+        "COVID19"
     ],
     "Publication": "https://www.nature.com/articles/s42256-021-00335-w#Sec9",
     "Source Code": "https://github.com/sirimullalab/redial-2020/tree/v1.0",
-    "License": "MIT License"
+    "License": "MIT",
+    "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos8fth.zip",
+    "DockerHub": "https://hub.docker.com/r/ersiliaos/eos8fth",
+    "Docker Architecture": [
+        "AMD64"
+    ]
 }
