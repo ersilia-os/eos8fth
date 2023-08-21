@@ -6,15 +6,13 @@
 ######################################################################################
 
 import tempfile, shutil
-import glob, sys, os, pandas as pd, numpy as np
+import glob, os, pandas as pd, numpy as np
 import argparse, pickle, json
 from get_features import FeaturesGeneration
 from smile_standardization import StandardSmiles
 
 #paths
-code_path = os.path.dirname(os.path.abspath(__file__))
-framework_path = os.path.dirname(code_path)
-model_path = os.path.dirname(framework_path)
+model_path = os.path.dirname(os.path.abspath(__file__))
 
 # SMILES standardization
 def standardize(temp_dir, csv_file):
@@ -34,10 +32,8 @@ def standardize(temp_dir, csv_file):
 # Features generation
 def automate(temp_dir, _file):
     stand_df = standardize(temp_dir, _file)
-    
     features_dictn = dict()
-    file_path = file_path = os.path.join(code_path, "dictn_models_fp.json")
-    dictn = json.load(open(file_path, 'r'))
+    dictn = json.load(open(os.path.join(model_path, "dictn_models_fp.json"), 'r'))
     fg = FeaturesGeneration()
     pharmacophore = fg.get_fingerprints(stand_df, 'dummy_name', 'tpatf', 'dummy_split', 'dummpy_numpy_folder')
     
@@ -54,7 +50,7 @@ def automate(temp_dir, _file):
 
 # Get fingerprint type of best fingerprint models
 def make_dictn():
-    file_path = os.path.join(model_path, "checkpoints/models_tuned_best/*.pkl")
+    file_path = os.path.join(model_path,"..","..", "checkpoints/models_tuned_best/*.pkl")
     files = glob.glob(file_path)
     fingerprints, models = [], []
     for f in files:
@@ -72,10 +68,9 @@ def make_dictn():
 def get_consensus(df):
     consensus_label = []
     for i in range(len(df)):
-        if (df['fingerprint'][i] + df['pharmacophore'][i] + df['rdkDescriptor'][i]) >= 2.0:
-            consensus_label.append(1.0)
-        else:
-            consensus_label.append(0.0)
+        sum_proba1 = df['fingerprint'][i] + df['pharmacophore'][i] + df['rdkDescriptor'][i]
+        consensus_proba1 = sum_proba1/3
+        consensus_label.append(consensus_proba1)
     df.insert(len(df.columns), 'Consensus', consensus_label)
     return df
 
@@ -97,13 +92,12 @@ def get_predictions(temp_dir, results, csv_file):
         for fp, fp_name in zip(fpnames, exact_fpnames):
             data = features_dictn[m][fp]
             X_true= data
-            models_tuned_dir = os.path.join(model_path, "checkpoints/models_tuned_best/")
-            #models_tuned_dir = os.path.abspath('eos8fth/model/checkpoints/models_tuned_best')
+            models_tuned_dir = os.path.join(model_path,"..","..", "checkpoints/models_tuned_best/")
             pickle_filename = '{}-{}-balanced_randomsplit7_70_15_15.pkl'.format(fp_name, m)
             pickle_path = os.path.join(models_tuned_dir, pickle_filename)
             
             model = pickle.load(open(pickle_path, 'rb'))
-            y_pred = model.predict(X_true)
+            y_pred = model.predict_proba(X_true)[:,1]
             predictions.append(y_pred)
         
         df.insert(len(df.columns), 'fingerprint', predictions[0])
@@ -132,4 +126,4 @@ if __name__ == '__main__':
     temp_dir = tempfile.mkdtemp() 
     get_predictions(temp_dir, results, csv_file)
     shutil.rmtree(temp_dir)
-    #print('Done')
+    print('Done')

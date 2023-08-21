@@ -1,27 +1,14 @@
-import sys,os,glob
-from pathlib import Path
 import numpy as np
 import pandas as pd
 from rdkit import Chem
-from rdkit.Chem import MACCSkeys, AllChem
-from rdkit.Chem.AtomPairs import Pairs, Torsions
-from rdkit.Chem.Fingerprints import FingerprintMols
-from rdkit.Chem import rdMolDescriptors
-from rdkit.ML.Descriptors import MoleculeDescriptors
-from rdkit.Chem import AllChem, Descriptors
 import pandas as pd
 import pickle
-import tempfile, os
-import shutil
-from sklearn.preprocessing import LabelEncoder
+import os
 from config import fpFunc_dict
-import argparse
 from sklearn.impute import SimpleImputer
 
 #paths
-code_path = os.path.dirname(os.path.abspath(__file__))
-framework_path = os.path.dirname(code_path)
-model_path = os.path.dirname(framework_path)
+model_path = os.path.dirname(os.path.abspath(__file__))
 
 class FeaturesGeneration:
     def __init__(self):
@@ -67,8 +54,7 @@ class FeaturesGeneration:
             fp_array = ( np.asarray((X), dtype=object) )
             X = X.astype(np.float32)
             X = np.nan_to_num(X)
-            scalers_dir = os.path.join(model_path, "checkpoints/scalers/")
-            #scalers_dir = os.path.abspath('eos8fth/model/checkpoints/scalers')
+            scalers_dir = os.path.join(model_path,"..","..", "checkpoints/scalers/")
             pickle_filename = '{}-rdkDes_scaler.pkl'.format(model)
             pickle_path = os.path.join(scalers_dir, pickle_filename)
             rdkDes_scaler = pickle.load(open(pickle_path, 'rb'))
