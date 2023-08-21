@@ -14,8 +14,7 @@ output_file = sys.argv[2]
 
 # current file directory
 root = os.path.dirname(os.path.abspath(__file__))
-temp_folder = tempfile.mkdtemp()
-print(temp_folder)
+temp_folder = tempfile.mkdtemp(prefix="eos-")
 
 # read SMILES from .csv file, assuming one column with header
 with open(input_file, "r") as f:
@@ -44,5 +43,5 @@ for file in consensus_files:
 
 combined_df.to_csv(output_file, index=False)
         
-#if os.path.exists(temp_folder):
-    #shutil.rmtree(temp_folder)
+if os.path.exists(temp_folder):
+    shutil.rmtree(temp_folder)
