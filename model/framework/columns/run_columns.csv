@@ -6,7 +6,7 @@ CPE,float,high,CytoPhatic Effect or probability that a compound reverses the vir
 ACE2,float,high,Probability that the compound inhibits ACE2 directly causing secondary effects
 CoV1-PPE_cs,float,high,Counterscreen for COV1-PPE
 TruHit,float,high,Probability that the AlpaLISA result is a false positive
-MERS-PPE_cs,float,high,Pprobability that the compound inhibits viral entry into cells using MERS pseudotype particles
+MERS-PPE_cs,float,high,Probability that the compound inhibits viral entry into cells using MERS pseudotype particles
 hCYTOX,float,high,Probability of cytotoxic effects assesed in Hh-WT fibroblasts
 MERS-PPE,float,high,Counterscreen for MERS-PPE
 3CL,float,high,Probability that the compound inhibits SARS-CoV-2 3CL (Mpro)
