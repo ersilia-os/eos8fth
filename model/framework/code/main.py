@@ -40,7 +40,7 @@ for file in consensus_files:
     consensus_column = df['Consensus']
     exp_name = file.split("-tmp_input-consensus.csv")[0]
     combined_df[exp_name] = consensus_column
-
+combined_df.columns = combined_df.columns.str.lower().str.replace('-', '_')
 combined_df.to_csv(output_file, index=False)
         
 if os.path.exists(temp_folder):
