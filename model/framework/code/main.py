@@ -29,7 +29,7 @@ with open(os.path.join(temp_folder,"tmp_input.csv"), "w", newline='') as f:
         writer.writerows(data_with_header)
 csv_file = os.path.join(temp_folder, "tmp_input.csv")
 get_predictions(temp_folder, temp_folder, csv_file)
-files = os.listdir(temp_folder)
+files = sorted(os.listdir(temp_folder))
 consensus_files = [f for f in files if f.endswith('-consensus.csv')]
 
 combined_df = pd.DataFrame()
