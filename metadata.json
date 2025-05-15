@@ -3,21 +3,18 @@
     "Slug": "redial-2020",
     "Status": "Ready",
     "Title": "SARS-CoV-2 antiviral prediction: REDIAL-2020",
-    "Description": "Predictor of several endpoints related to Sars-CoV-2. It provides predictions for Live Virus Infectivity, Viral Entry, Viral Replication, In Vitro Infectivity and Human Cell Toxicity using a combination of three models. Consensus results are obtained by averaging the prediction for the three different models for each activity and toxicity models. The models have been built using NCATS COVID19 data. Further details on result interpretations can be found here: https://drugcentral.org/Redial\n",
+    "Description": "Predictor of several endpoints related to Sars-CoV-2. It provides predictions for Live Virus Infectivity, Viral Entry, Viral Replication, In Vitro Infectivity and Human Cell Toxicity using a combination of three models. Consensus results are obtained by averaging the prediction for the three different models for each activity and toxicity models. The models have been built using NCATS COVID19 data. Further details on result interpretations can be found here: https://drugcentral.org/Redial",
+    "Deployment": [
+        "Local"
+    ],
     "Source": "Local",
     "Source Type": "External",
+    "Task": "Annotation",
+    "Subtask": "Activity prediction",
     "Input": [
         "Compound"
     ],
     "Input Dimension": 1,
-    "Task": "Annotation",
-    "Subtask": "Activity prediction",
-    "Biomedical Area": [
-        "COVID-19"
-    ],
-    "Target Organism": [
-        "SARS-CoV-2"
-    ],
     "Output": [
         "Probability"
     ],
@@ -29,19 +26,22 @@
         "COVID19",
         "Antiviral activity"
     ],
-    "Publication": "https://www.nature.com/articles/s42256-021-00335-w#Sec9",
+    "Biomedical Area": [
+        "COVID-19"
+    ],
+    "Target Organism": [
+        "SARS-CoV-2"
+    ],
     "Publication Type": "Peer reviewed",
     "Publication Year": 2021,
+    "Publication": "https://www.nature.com/articles/s42256-021-00335-w#Sec9",
     "Source Code": "https://github.com/sirimullalab/redial-2020/tree/v1.0",
     "License": "MIT",
     "Contributor": "Pradnya2203",
     "Incorporation Date": "2023-03-27",
+    "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos8fth.zip",
     "DockerHub": "https://hub.docker.com/r/ersiliaos/eos8fth",
     "Docker Architecture": [
         "AMD64"
-    ],
-    "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos8fth.zip",
-    "Deployment": [
-        "Local"
     ]
 }
