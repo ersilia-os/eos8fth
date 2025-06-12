@@ -28,16 +28,16 @@ This model was incorporated on 2023-03-27.
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
 |------|------|-----------|-------------|
-| cov1_ppe | float | high | Pprobability that the compound inhibits viral entry into cells using Sars-Cov1 pseudotype particles |
 | 3cl | float | high | Probability that the compound inhibits SARS-CoV-2 3CL (Mpro) |
 | ace2 | float | high | Probability that the compound inhibits ACE2 directly causing secondary effects |
-| cov1_ppe_cs | float | high | Counterscreen for COV1-PPE |
-| mers_ppe_cs | float | high | Probability that the compound inhibits viral entry into cells using MERS pseudotype particles |
-| cytotox | float | high | Probability of toxicity on Vero E6 cells as counterscreen for the CPE |
-| cpe | float | high | CytoPhatic Effect or probability that a compound reverses the virus effect on Vero E6 cells |
-| mers_ppe | float | high | Counterscreen for MERS-PPE |
-| hcytox | float | high | Probability of cytotoxic effects assesed in Hh-WT fibroblasts |
 | alphalisa | float | high | Probability that a compound disrupts the Spike-ACE2 protein-protein interaction |
+| cov1_ppe | float | high | Pprobability that the compound inhibits viral entry into cells using Sars-Cov1 pseudotype particles |
+| cov1_ppe_cs | float | high | Counterscreen for COV1-PPE |
+| cpe | float | high | CytoPhatic Effect or probability that a compound reverses the virus effect on Vero E6 cells |
+| cytotox | float | high | Probability of toxicity on Vero E6 cells as counterscreen for the CPE |
+| hcytox | float | high | Probability of cytotoxic effects assesed in Hh-WT fibroblasts |
+| mers_ppe | float | high | Counterscreen for MERS-PPE |
+| mers_ppe_cs | float | high | Probability that the compound inhibits viral entry into cells using MERS pseudotype particles |
 
 _10 of 11 columns are shown_
 ### Source and Deployment
