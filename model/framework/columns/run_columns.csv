@@ -2,11 +2,11 @@ name,type,direction,description
 3cl,float,high,Probability that the compound inhibits SARS-CoV-2 3CL (Mpro)
 ace2,float,high,Probability that the compound inhibits ACE2 directly causing secondary effects
 alphalisa,float,high,Probability that a compound disrupts the Spike-ACE2 protein-protein interaction
+cpe,float,high,CytoPhatic Effect or probability that a compound reverses the virus effect on Vero E6 cells
 cov1_ppe,float,high,Pprobability that the compound inhibits viral entry into cells using Sars-Cov1 pseudotype particles
 cov1_ppe_cs,float,high,Counterscreen for COV1-PPE
-cpe,float,high,CytoPhatic Effect or probability that a compound reverses the virus effect on Vero E6 cells
-cytotox,float,high,Probability of toxicity on Vero E6 cells as counterscreen for the CPE
-hcytox,float,high,Probability of cytotoxic effects assesed in Hh-WT fibroblasts
 mers_ppe,float,high,Counterscreen for MERS-PPE
 mers_ppe_cs,float,high,Probability that the compound inhibits viral entry into cells using MERS pseudotype particles
 truhit,float,high,Probability that the AlpaLISA result is a false positive
+cytotox,float,high,Probability of toxicity on Vero E6 cells as counterscreen for the CPE
+hcytox,float,high,Probability of cytotoxic effects assesed in Hh-WT fibroblasts
