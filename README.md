@@ -48,6 +48,8 @@ _10 of 11 columns are shown_
 - **S3 Storage**: [https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos8fth.zip](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos8fth.zip)
 
 ### Resource Consumption
+- **Model Size (Mb):** `244`
+- **Environment Size (Mb):** `847`
 
 
 ### References
@@ -55,7 +57,7 @@ _10 of 11 columns are shown_
 - **Publication**: [https://www.nature.com/articles/s42256-021-00335-w#Sec9](https://www.nature.com/articles/s42256-021-00335-w#Sec9)
 - **Publication Type:** `Peer reviewed`
 - **Publication Year:** `2021`
-- **Ersilia Contributor:** [Pradnya2203](https://github.com/Pradnya2203)
+- **Ersilia Contributor:** [Abellegese](https://github.com/Abellegese)
 
 ### License
 This package is licensed under a [GPL-3.0](https://github.com/ersilia-os/ersilia/blob/master/LICENSE) license. The model contained within this package is licensed under a [MIT](LICENSE) license.
