@@ -50,7 +50,12 @@ _10 of 11 columns are shown_
 ### Resource Consumption
 - **Model Size (Mb):** `244`
 - **Environment Size (Mb):** `1086`
+- **Image Size (Mb):** `1238.62`
 
+**Computational Performance (seconds):**
+- 10 inputs: `34.73`
+- 100 inputs: `162.97`
+- 10000 inputs: `-1`
 
 ### References
 - **Source Code**: [https://github.com/sirimullalab/redial-2020/tree/v1.0](https://github.com/sirimullalab/redial-2020/tree/v1.0)
