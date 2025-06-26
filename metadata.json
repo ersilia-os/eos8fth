@@ -37,7 +37,7 @@
     "Publication": "https://www.nature.com/articles/s42256-021-00335-w#Sec9",
     "Source Code": "https://github.com/sirimullalab/redial-2020/tree/v1.0",
     "License": "MIT",
-    "Contributor": "Abellegese",
+    "Contributor": "Pradnya2203",
     "Incorporation Date": "2023-03-27",
     "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos8fth.zip",
     "DockerHub": "https://hub.docker.com/r/ersiliaos/eos8fth",
