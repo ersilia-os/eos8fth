@@ -4,6 +4,7 @@ Predictor of several endpoints related to Sars-CoV-2. It provides predictions fo
 
 This model was incorporated on 2023-03-27.
 
+
 ## Information
 ### Identifiers
 - **Ersilia Identifier:** `eos8fth`
@@ -62,7 +63,7 @@ _10 of 11 columns are shown_
 - **Publication**: [https://www.nature.com/articles/s42256-021-00335-w#Sec9](https://www.nature.com/articles/s42256-021-00335-w#Sec9)
 - **Publication Type:** `Peer reviewed`
 - **Publication Year:** `2021`
-- **Ersilia Contributor:** [Abellegese](https://github.com/Abellegese)
+- **Ersilia Contributor:** [Pradnya2203](https://github.com/Pradnya2203)
 
 ### License
 This package is licensed under a [GPL-3.0](https://github.com/ersilia-os/ersilia/blob/master/LICENSE) license. The model contained within this package is licensed under a [MIT](LICENSE) license.
