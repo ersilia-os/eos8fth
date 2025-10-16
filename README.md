@@ -2,8 +2,7 @@
 
 Predictor of several endpoints related to Sars-CoV-2. It provides predictions for Live Virus Infectivity, Viral Entry, Viral Replication, In Vitro Infectivity and Human Cell Toxicity using a combination of three models. Consensus results are obtained by averaging the prediction for the three different models for each activity and toxicity models. The models have been built using NCATS COVID19 data. Further details on result interpretations can be found here: https://drugcentral.org/Redial
 
-This model was incorporated on 2023-03-27.
-
+This model was incorporated on 2023-03-27.Last packaged on 2025-10-16.
 
 ## Information
 ### Identifiers
@@ -51,11 +50,11 @@ _10 of 11 columns are shown_
 ### Resource Consumption
 - **Model Size (Mb):** `244`
 - **Environment Size (Mb):** `1128`
-- **Image Size (Mb):** `1238.62`
+- **Image Size (Mb):** `1279.7`
 
 **Computational Performance (seconds):**
-- 10 inputs: `34.73`
-- 100 inputs: `162.97`
+- 10 inputs: `29.07`
+- 100 inputs: `65.46`
 - 10000 inputs: `-1`
 
 ### References
