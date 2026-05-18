@@ -59,7 +59,7 @@ _10 of 11 columns are shown_
 
 ### References
 - **Source Code**: [https://github.com/sirimullalab/redial-2020/tree/v1.0](https://github.com/sirimullalab/redial-2020/tree/v1.0)
-- **Publication**: [https://www.nature.com/articles/s42256-021-00335-w#Sec9](https://www.nature.com/articles/s42256-021-00335-w#Sec9)
+- **Publication**: [https://doi.org/10.1038/s42256-021-00335-w](https://doi.org/10.1038/s42256-021-00335-w)
 - **Publication Type:** `Peer reviewed`
 - **Publication Year:** `2021`
 - **Ersilia Contributor:** [Pradnya2203](https://github.com/Pradnya2203)
