@@ -22,8 +22,6 @@
     "Output Consistency": "Fixed",
     "Interpretation": "The model returns the probability of the molecule being active in each assay. Good drugs: active in CPE, 3CL and inactive in cytotox, hCYTOX and ACE2 and/or active in at least one of: AlphaLISA, CoV-PPE, MERS-PPE while inactive in the counter screen respectively: TruHit, CoV-PPE_cs, MERS-PPE_cs.",
     "Tag": [
-        "Sars-CoV-2",
-        "COVID19",
         "Antiviral activity"
     ],
     "Biomedical Area": [
