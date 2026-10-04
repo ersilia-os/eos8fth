@@ -1,6 +1,6 @@
 # SARS-CoV-2 antiviral prediction: REDIAL-2020
 
-Predictor of several endpoints related to Sars-CoV-2. It provides predictions for Live Virus Infectivity, Viral Entry, Viral Replication, In Vitro Infectivity and Human Cell Toxicity using a combination of three models. Consensus results are obtained by averaging the prediction for the three different models for each activity and toxicity models. The models have been built using NCATS COVID19 data. Further details on result interpretations can be found here: https://drugcentral.org/Redial
+Profiles a compound across eleven SARS-CoV-2 assays from the REDIAL-2020 suite, spanning live virus infectivity, viral entry, viral replication, in vitro infectivity and human cell toxicity, with counter-screens included alongside the primary readouts. Models were built on data generated at NCATS, and consensus predictions average three independent models per endpoint. Promising candidates show activity in the infectivity and protease assays while remaining inactive in the cytotoxicity and counter-screen readouts.
 
 This model was incorporated on 2023-03-27.Last packaged on 2025-10-16.
 
@@ -23,7 +23,7 @@ This model was incorporated on 2023-03-27.Last packaged on 2025-10-16.
 ### Output
 - **Output Dimension:** `11`
 - **Output Consistency:** `Fixed`
-- **Interpretation:** The model returns the probability of the molecule being active in each assay. Good drugs: active in CPE, 3CL and inactive in cytotox, hCYTOX and ACE2 and/or active in at least one of: AlphaLISA, CoV-PPE, MERS-PPE while inactive in the counter screen respectively: TruHit, CoV-PPE_cs, MERS-PPE_cs.
+- **Interpretation:** Probability of activity in each of eleven SARS-CoV-2 assays, including cytotoxicity counter-screens.
 
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
