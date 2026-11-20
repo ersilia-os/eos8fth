@@ -3,7 +3,7 @@
 Profiles a compound across eleven SARS-CoV-2 assays from the REDIAL-2020 suite, spanning live virus infectivity, viral entry, viral replication, in vitro infectivity and human cell toxicity, with counter-screens alongside the primary readouts. KC, Bocci and colleagues trained the models on more than 23,000 high-throughput screening points from the NCATS COVID-19 portal, and every value here averages three classifiers built on different descriptor families. Promising candidates are active in the infectivity and protease assays and inactive in the cytotoxicity and counter-screen readouts.
 
 This model was incorporated on 2023-03-27.
-Last packaged on 2025-10-16.
+Last packaged on 2026-11-20.
 
 ## Information
 ### Identifiers
@@ -51,11 +51,11 @@ _10 of 11 columns are shown_
 ### Resource Consumption
 - **Model Size (Mb):** `244`
 - **Environment Size (Mb):** `1165`
-- **Image Size (Mb):** `1279.7`
+- **Image Size (Mb):** `475.34`
 
 **Computational Performance (seconds):**
-- 10 inputs: `29.07`
-- 100 inputs: `65.46`
+- 10 inputs: `26.07`
+- 100 inputs: `52.79`
 - 10000 inputs: `-1`
 
 ### References
